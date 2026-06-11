@@ -10,12 +10,10 @@ const upload = multer({ storage: multer.memoryStorage() });
 
 app.use(cors());
 
-// Home route
 app.get("/", (req, res) => {
     res.send("Background Remover API Running");
 });
 
-// Remove background route
 app.post("/remove-bg", upload.single("image"), async (req, res) => {
     try {
         const formData = new FormData();
@@ -46,4 +44,4 @@ app.post("/remove-bg", upload.single("image"), async (req, res) => {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log("Server running on port", PORT);
-});OR.P.l
+});
